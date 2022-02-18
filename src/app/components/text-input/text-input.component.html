@@ -1,2 +1,8 @@
-<label [for]="inputName">{{labelName}}</label><br>
-<input [type]="typeName" [id]="inputName" [name]="inputName" required><br>
+<!-- <label [for]="inputName">{{labelName}}</label><br>
+<input [type]="typeName" [id]="inputName" [name]="inputName" required><br> -->
+
+
+<mat-form-field class="example-full-width" appearance="fill">
+    <mat-label>{{labelName}}</mat-label>
+    <input matInput required>
+</mat-form-field><br>
