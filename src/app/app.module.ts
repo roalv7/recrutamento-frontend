@@ -8,6 +8,7 @@ import { MessageInputComponent } from './components/message-input/message-input.
 import { ButtonInputComponent } from './components/button-input/button-input.component';
 import { FormPageComponent } from './pages/form-page/form-page.component';
 import { TextInputComponent } from './components/text-input/text-input.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 
 @NgModule({
@@ -22,7 +23,8 @@ import { TextInputComponent } from './components/text-input/text-input.component
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
