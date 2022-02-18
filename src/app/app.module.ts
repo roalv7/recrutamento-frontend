@@ -9,7 +9,8 @@ import { ButtonInputComponent } from './components/button-input/button-input.com
 import { FormPageComponent } from './pages/form-page/form-page.component';
 import { TextInputComponent } from './components/text-input/text-input.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-
+import {MatSelectModule} from '@angular/material/select';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,9 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    MatSelectModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

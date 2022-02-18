@@ -1,10 +1,17 @@
-<label for="interests">Interests</label><br>
+<!-- <label for="interests">Interests</label><br> -->
 
-<select id="interests">
+<!-- <select id="interests">
     <option value=""></option>
     <option value="Frontend">Frontend</option>
     <option value="Backend">Backend</option>
     <option value="Machine Learning">Machine Learning</option>
     <option value="Data Science">Data Science</option>
 
-</select><br>
+</select><br> -->
+
+<mat-form-field appearance="fill">
+    <mat-label>Interests</mat-label>
+    <mat-select multiple>
+      <mat-option *ngFor="let topping of toppingList" [value]="topping">{{topping}}</mat-option>
+    </mat-select>
+  </mat-form-field>
