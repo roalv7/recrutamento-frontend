@@ -7,6 +7,7 @@ import { NameInputComponent } from './components/name-input/name-input.component
 import { EmailInputComponent } from './components/email-input/email-input.component';
 import { InterestsInputComponent } from './components/interests-input/interests-input.component';
 import { MessageInputComponent } from './components/message-input/message-input.component';
+import { ButtonInputComponent } from './components/button-input/button-input.component';
 
 
 @NgModule({
@@ -16,6 +17,7 @@ import { MessageInputComponent } from './components/message-input/message-input.
     EmailInputComponent,
     InterestsInputComponent,
     MessageInputComponent,
+    ButtonInputComponent,
     
   ],
   imports: [
