@@ -11,7 +11,7 @@
 
 <mat-form-field class="example-full-width">
     <mat-label>Interests</mat-label>
-    <mat-select multiple>
+    <mat-select multiple required>
       <mat-option *ngFor="let topping of toppingList" [value]="topping">{{topping}}</mat-option>
     </mat-select>
   </mat-form-field><br><br>
