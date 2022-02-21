@@ -4,5 +4,6 @@
 
 <mat-form-field class="example-full-width" >
     <mat-label>{{labelName}}</mat-label>
-    <input matInput required>
+    <input matInput required [formControl]="formControlInput">
+    <ng-content></ng-content>
 </mat-form-field><br><br>

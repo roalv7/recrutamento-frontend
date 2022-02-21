@@ -2,9 +2,15 @@
     <h1>CGI</h1>
     <h2>Contact us</h2><br>
     <form>
-    <app-text-input labelName="Name" typeName="text" inputName="name"></app-text-input><br>
-    <app-text-input labelName="Email" typeName="email" inputName="email"></app-text-input><br>
-    <app-interests-input></app-interests-input><br>
+    <app-text-input labelName="Name" typeName="text" inputName="name" [formControlInput]="formControlName">
+        <mat-error *ngIf="formControlName.invalid">{{getErrorMessage()}}</mat-error>
+    </app-text-input><br>
+    <app-text-input labelName="Email" typeName="email" inputName="email" [formControlInput]="formControlEmail">
+        <mat-error *ngIf="formControlEmail.invalid">{{getErrorMessageEmail()}}</mat-error>
+    </app-text-input><br>
+    <app-interests-input [formControlInput]="formControlInterests">
+        <mat-error *ngIf="formControlInterests.invalid">{{getErrorMessageEmail()}}</mat-error>
+    </app-interests-input><br>
     <app-message-input></app-message-input><br>
     <app-button-input></app-button-input>
     </form>
