@@ -7,7 +7,7 @@
     </app-text-input><br>
     <app-text-input labelName="Email" typeName="email" inputName="email" [formControlInput]="formControlEmail">
         <mat-error *ngIf="formControlEmail.invalid">{{getErrorMessageEmail()}}</mat-error>
-    </app-text-input><br>
+    </app-text-input><br> 
     <app-interests-input [formControlInput]="formControlInterests">
         <mat-error *ngIf="formControlInterests.invalid">{{getErrorMessageEmail()}}</mat-error>
     </app-interests-input><br>

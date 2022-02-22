@@ -14,6 +14,7 @@ import {MatInputModule} from '@angular/material/input';
 import {MatButtonModule} from '@angular/material/button';
 import {MatIconModule} from '@angular/material/icon';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { ThanksPageComponent } from './pages/thanks-page/thanks-page.component';
 
 @NgModule({
   declarations: [
@@ -23,6 +24,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     ButtonInputComponent,
     FormPageComponent,
     TextInputComponent,
+    ThanksPageComponent,
     
   ],
   imports: [

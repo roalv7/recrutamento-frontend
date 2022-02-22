@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { FormControl } from '@angular/forms';
 
 @Component({
@@ -10,6 +10,9 @@ export class InterestsInputComponent implements OnInit {
 
   toppings = new FormControl("BAckend");
   toppingList: string[] = ['Backend', 'Frontend', 'Machine Learning', 'Data Science'];
+
+  @Input()
+  formControlInput = new FormControl();
   
   constructor() { }
 
