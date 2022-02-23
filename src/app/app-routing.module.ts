@@ -5,9 +5,9 @@ import { ThanksPageComponent } from './pages/thanks-page/thanks-page.component';
 
 const routes: Routes = [
 
-    {path: 'form-page.component', component: FormPageComponent},
-    {path: 'thanks-page.component', component: ThanksPageComponent},
-    {path: '', redirectTo: '/form-page.component', pathMatch: 'full'}
+    {path: 'form', component: FormPageComponent},
+    {path: 'thanksPage', component: ThanksPageComponent},
+    {path: '', redirectTo: '/form', pathMatch: 'full'}
 ];
 
 @NgModule({
