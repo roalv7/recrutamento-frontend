@@ -1,3 +1,6 @@
+
+<mat-card>
+    <mat-card-content>
 <div>
     <h1>CGI</h1>
     <h2>Contact us</h2><br>
@@ -9,9 +12,11 @@
         <mat-error *ngIf="formControlEmail.invalid">{{getErrorMessageEmail()}}</mat-error>
     </app-text-input><br> 
     <app-interests-input [formControlInput]="formControlInterests">
-        <mat-error *ngIf="formControlInterests.invalid">{{getErrorMessageEmail()}}</mat-error>
+        <mat-error *ngIf="formControlInterests.invalid">{{getErrorMessageInterests()}}</mat-error>
     </app-interests-input><br>
     <app-message-input></app-message-input><br>
-    <app-button-input></app-button-input>
+    <app-button-input [formName]="formControlName" [formEmail]="formControlEmail" [formInterests]="formControlInterests"></app-button-input>
     </form>
 </div>
+</mat-card-content>
+</mat-card>

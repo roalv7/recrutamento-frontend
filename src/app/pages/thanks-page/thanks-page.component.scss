@@ -1,17 +1,41 @@
-h1{
-    color: rgb(255, 0, 0);
-    font-weight: bold;
-    font-size: 400%;
+div{
+    background-image: linear-gradient(rgba(227, 25, 55, 1), rgba(82, 54, 171, 1));
     text-align: center;
-    margin-top: 12%;
-    
+    width: 100%;
+    max-width: 600px;
+    height:94%;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    margin-top: 30px;
+    margin-bottom: auto;
+    margin-left: auto;
+    margin-right: auto;
 }
 
-h3{
-    color: rgb(201, 74, 74);
+
+h1{
+    color: rgb(255, 255, 255);
     font-weight: bold;
-    font-size: 200%;
-    text-align: center;
-    margin-top: 6%;
+    font-size: 700%;
+    text-align: left;
+    margin-top: 35%;
+    margin-left: 7%;
+    
+}
+h2{
+    color: rgb(255, 255, 255);
+    font-weight: bold;
+    font-size: 250%;
+    text-align: left;
+    margin-top: 15%;
+    margin-left: 9%;
+    
+}
+h3{
+    color: rgb(255, 255, 255);
+    font-weight: bold;
+    font-size: 250%;
+    text-align: left;
+    margin-top: 5%;
+    margin-left: 9%;
     
 }

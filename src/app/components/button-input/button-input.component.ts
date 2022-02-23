@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { FormControl } from '@angular/forms';
 
 @Component({
   selector: 'app-button-input',
@@ -7,6 +8,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ButtonInputComponent implements OnInit {
 
+  @Input()
+  formName = new FormControl();
+
+  @Input()
+  formEmail = new FormControl();
+  
+  @Input()
+  formInterests = new FormControl();
+  
   constructor() { }
 
   ngOnInit(): void {
