@@ -13,6 +13,9 @@ export class ButtonInputComponent implements OnInit {
 
   @Input()
   formEmail = new FormControl();
+
+  @Input()
+  formNumber = new FormControl();
   
   @Input()
   formInterests = new FormControl();

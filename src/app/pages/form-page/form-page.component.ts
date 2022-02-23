@@ -28,6 +28,25 @@ export class FormPageComponent implements OnInit {
 
     return this.formControlEmail.hasError('email') ? 'Not a valid email' : '';
   }
+
+  formControlNumber = new FormControl('', [Validators.required,Validators.minLength(9),Validators.maxLength(9),Validators.pattern('[0-9]*')]);
+
+  getErrorMessageNumber() {
+    if (this.formControlNumber.hasError('required') && this.formControlNumber.touched) {
+      return 'You must enter a number';
+    }
+    if (this.formControlNumber.hasError('pattern')) {
+      return 'You must enter a number';
+    }
+    if(this.formControlNumber.value?.length<9 && this.formControlNumber.value?.length>0 ){
+      return 'Need to have 9 digits';
+    }
+    if(this.formControlNumber.value?.length>9){
+      return 'Need to have 9 digits';
+    }
+
+    return this.formControlNumber.hasError('number') ? 'Need to have 9 digits' : '';
+  }
   
   formControlInterests = new FormControl('', [Validators.required]);
 

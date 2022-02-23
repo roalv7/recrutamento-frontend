@@ -1,8 +1,8 @@
 <!-- <br><label for="button">Send</label>
 <button type="submit" >></button> -->
-<form>
+<div>
     <mat-label class="text">SEND</mat-label>
-    <button [disabled]="formName.invalid || formEmail.invalid || formInterests.invalid" type="submit" class="button" mat-mini-fab color="success" routerLink="/thanks-page.component">
+    <button [disabled]="formName.invalid || formEmail.invalid || formNumber.invalid || formInterests.invalid" type="submit" class="button" mat-mini-fab color="success" routerLink="/thanks-page.component">
         <mat-icon>send</mat-icon>
     </button>
-</form>
+</div>
