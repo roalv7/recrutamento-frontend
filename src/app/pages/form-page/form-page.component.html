@@ -3,7 +3,7 @@
     <mat-card-content>
         <h1>CGI</h1>
         <h2>Contact us</h2><br>
-        <form>
+        <form (ngSubmit)= "submitHandle()">
         <app-text-input labelName="Name" typeName="text" inputName="name" [formControlInput]="formControlName">
             <mat-error *ngIf="formControlName.invalid">{{getErrorMessage()}}</mat-error>
         </app-text-input><br>

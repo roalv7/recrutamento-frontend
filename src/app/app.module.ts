@@ -16,6 +16,7 @@ import {MatIconModule} from '@angular/material/icon';
 import {MatCardModule} from '@angular/material/card';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ThanksPageComponent } from './pages/thanks-page/thanks-page.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -38,7 +39,8 @@ import { ThanksPageComponent } from './pages/thanks-page/thanks-page.component';
     MatInputModule,
     MatButtonModule,
     MatIconModule,
-    MatCardModule
+    MatCardModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

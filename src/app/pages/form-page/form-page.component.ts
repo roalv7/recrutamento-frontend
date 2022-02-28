@@ -1,5 +1,7 @@
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { FormControl, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-form-page',
@@ -7,6 +9,11 @@ import { FormControl, Validators } from '@angular/forms';
   styleUrls: ['./form-page.component.scss']
 })
 export class FormPageComponent implements OnInit {
+  
+  constructor(private _router: Router, private _httpClient: HttpClient){
+    
+  }
+  
   ngOnInit(): void {
   }
   formControlName = new FormControl('', [Validators.required]);
@@ -56,5 +63,16 @@ export class FormPageComponent implements OnInit {
     }
 
     return this.formControlInterests.hasError('interests') ? 'Choose an interest' : '';
+  }
+
+  
+
+  submitHandle(){
+    var data = "name=" + this.formControlName.value  + "&email=" + this.formControlEmail.value + "&number=" + this.formControlNumber.value + "&interests=" + this.formControlInterests.value;
+    this._httpClient.post('https://localhost:7082/User?'+data,null).subscribe(
+      (response) =>{
+      console.log("response do request http",response);
+    //  this._router.navigate(["thanksPage"]);
+    });
   }
 }
