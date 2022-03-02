@@ -16,7 +16,7 @@
         <app-interests-input [formControlInput]="formControlInterests">
             <mat-error *ngIf="formControlInterests.invalid">{{getErrorMessageInterests()}}</mat-error>
         </app-interests-input><br>
-        <app-message-input></app-message-input><br>
+        <app-message-input [formControlInput]="formControlMessage"></app-message-input><br>
         <app-button-input [formName]="formControlName" [formEmail]="formControlEmail" [formNumber]="formControlNumber" [formInterests]="formControlInterests"></app-button-input>
         </form>
     </mat-card-content>

@@ -65,14 +65,21 @@ export class FormPageComponent implements OnInit {
     return this.formControlInterests.hasError('interests') ? 'Choose an interest' : '';
   }
 
+  formControlMessage = new FormControl();
   
 
   submitHandle(){
-    var data = "name=" + this.formControlName.value  + "&email=" + this.formControlEmail.value + "&number=" + this.formControlNumber.value + "&interests=" + this.formControlInterests.value;
-    this._httpClient.post('https://localhost:7082/User?'+data,null).subscribe(
-      (response) =>{
+    const user = {
+      name: this.formControlName.value,
+      email: this.formControlEmail.value,
+      number: this.formControlNumber.value,
+      interests: this.formControlInterests.value,
+      message: this.formControlMessage.value
+    };
+
+    this._httpClient.post('https://localhost:7082/User',user).subscribe((response) =>{
       console.log("response do request http",response);
-    //  this._router.navigate(["thanksPage"]);
+      //this._router.navigate(["thanksPage"]);
     });
   }
 }
