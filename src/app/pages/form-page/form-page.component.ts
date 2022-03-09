@@ -2,6 +2,8 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { FormControl, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { Subscriber } from 'rxjs';
+import {MatSnackBar,MatSnackBarHorizontalPosition,MatSnackBarVerticalPosition,} from '@angular/material/snack-bar';
 
 @Component({
   selector: 'app-form-page',
@@ -10,10 +12,11 @@ import { Router } from '@angular/router';
 })
 export class FormPageComponent implements OnInit {
   
-  constructor(private _router: Router, private _httpClient: HttpClient){
+  constructor(private _router: Router, private _httpClient: HttpClient,private _snackBar: MatSnackBar){
     
   }
-  
+
+  //disable = false;
   ngOnInit(): void {
   }
   formControlName = new FormControl('', [Validators.required]);
@@ -69,17 +72,29 @@ export class FormPageComponent implements OnInit {
   
 
   submitHandle(){
+    //this.disable = true;
     const user = {
-      name: this.formControlName.value,
-      email: this.formControlEmail.value,
-      number: this.formControlNumber.value,
-      interests: this.formControlInterests.value,
-      message: this.formControlMessage.value
+      Name: this.formControlName.value,
+      Email: this.formControlEmail.value,
+      Number: this.formControlNumber.value,
+      Interests: this.formControlInterests.value,
+      Message: this.formControlMessage.value
     };
-
     this._httpClient.post('https://localhost:7082/User',user).subscribe((response) =>{
       console.log("response do request http",response);
-      //this._router.navigate(["thanksPage"]);
-    });
+      this._router.navigate(["thanksPage"]);
+    },
+      (error) => {
+        this._snackBar.open(error.error,"X", {
+          horizontalPosition: "center",
+          verticalPosition: "top",
+          duration: 4000,
+        });
+        console.log(error.error)
+      },
+      () => console.log("SUCCESS")
+
+    
+    );
   }
 }

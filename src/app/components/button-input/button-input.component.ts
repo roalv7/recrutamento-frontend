@@ -19,6 +19,8 @@ export class ButtonInputComponent implements OnInit {
   
   @Input()
   formInterests = new FormControl();
+
+ 
   
   constructor() { }
 
