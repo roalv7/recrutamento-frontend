@@ -91,6 +91,7 @@ export class FormPageComponent implements OnInit {
           duration: 4000,
         });
         console.log(error.error)
+        this.formControlEmail.reset();
       },
       () => console.log("SUCCESS")
 
