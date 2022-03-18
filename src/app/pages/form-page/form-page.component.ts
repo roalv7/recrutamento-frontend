@@ -1,23 +1,29 @@
-import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { FormControl, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-import { Subscriber } from 'rxjs';
-import {MatSnackBar,MatSnackBarHorizontalPosition,MatSnackBarVerticalPosition,} from '@angular/material/snack-bar';
+import {MatSnackBar,} from '@angular/material/snack-bar';
 
 @Component({
   selector: 'app-form-page',
   templateUrl: './form-page.component.html',
   styleUrls: ['./form-page.component.scss']
 })
+
 export class FormPageComponent implements OnInit {
   
+  interests: string[] = [];
   constructor(private _router: Router, private _httpClient: HttpClient,private _snackBar: MatSnackBar){
     
   }
 
-  //disable = false;
   ngOnInit(): void {
+    this._httpClient.get('https://localhost:7082/Interest').subscribe((data:any) => {
+      //console.log(data);
+      data.forEach((element: any) => {
+        this.interests.push(element.description)
+      });
+    });
   }
   formControlName = new FormControl('', [Validators.required]);
 
@@ -80,7 +86,7 @@ export class FormPageComponent implements OnInit {
       Interests: this.formControlInterests.value,
       Message: this.formControlMessage.value
     };
-    this._httpClient.post('https://localhost:7082/User',user).subscribe((response) =>{
+    this._httpClient.post("https://localhost:7082/User",user).subscribe((response) =>{
       console.log("response do request http",response);
       this._router.navigate(["thanksPage"]);
     },

@@ -8,8 +8,11 @@ import { FormControl } from '@angular/forms';
 })
 export class InterestsInputComponent implements OnInit {
 
-  toppings = new FormControl("BAckend");
-  toppingList: string[] = ['Backend', 'Frontend', 'Machine Learning', 'Data Science'];
+  
+
+  @Input()
+  interestList: string[] = [];
+
 
   @Input()
   formControlInput = new FormControl();
